@@ -1,0 +1,138 @@
+.header {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  color: $color-white;
+
+  .container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+
+    &__title {
+      letter-spacing: 5px;
+      font-size: ($base-size * 2);
+    }
+
+    &__subtitle {
+      letter-spacing: 2.5px;
+      font-size: ($base-size * 1.0);
+      margin: -1em 0 0 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 60%;
+
+    a {
+      text-decoration: none;
+      text-align: center;
+      padding: $base-size ($base-size * 2);
+      text-transform: uppercase;
+      color: $color-white;
+
+      &.active {
+        color: green;
+      }
+    }
+  }
+
+  .title {
+    position: relative;
+    font-size: $base-size * 2.5;
+    min-height: 120px;
+
+    .title__left,
+    .title__right {
+      text-transform: uppercase;
+      color: $color-brown;
+      letter-spacing: 10px;
+      line-height: 1.2;
+    }
+    
+    .title__left{
+      margin-bottom: 0;
+    }
+
+    .title__right{
+      text-align: right;
+      margin-top: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 8px;
+      width: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $color-brown;
+    }
+  }
+
+  &__discover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $base-size;
+    min-height: 150px;
+    gap: 10px;
+
+    .discover_text{
+      font-size: $base-size * 2.0;
+      margin: 0;
+      text-transform: uppercase;
+      height: 35px;
+      letter-spacing: 8px;
+      line-height: 1.5;
+    }
+
+    .icon-arrow {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      font-size: 25px;
+      transform: translateX(-25%);
+    }
+  }
+
+  @media (max-width: 650px) {
+    .logo {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header__menu {
+      justify-content: center;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+}

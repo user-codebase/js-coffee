@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Tigre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,600;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="El Tigre offers premium Venezuelan coffee beans. Discover original tastes, handcrafted roasting, and bold flavors for true coffee lovers.">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="logo">
+          <h1 class="logo__title font-black">El Tigre</h1>
+          <h2 class="logo__subtitle font-bold">Venezuela Coffee Beans</h2>
+        </div>
+        <nav class="header__menu">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="title">
+        <h1 class="title__left">Home of</h1>
+        <h1 class="title__right">Original Tastes</h1>
+      </div>
+      <div class="header__discover">
+        <p class="discover_text font-regular">Discover</p>
+        <i class="icon-arrow"></i>
+      </div>
+    </div>
+  </header>
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section_title">Products</h2>
+      <div class="products__list"></div>
+    </div>
+  </section>
+  <section class="about_us" id="about_us">
+    <div class="container">
+      <h2 class="section_title">About us</h2>
+      <div class="about_us__text font-semibold-italic">
+        <p >Who are we? Just a bunch of friend with a love for a good coffee and desire to create something new, something original.</p>
+        <p >Our coffees reflect us - young, wild and free. We are on the journey of new tastes...</p>
+        <p class="about_us__text__right">Join us!</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact_us" id="contact">
+    <div class="container">
+      <h2 class="section_title">Contact us</h2>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name" class="font-bold">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="title" class="font-bold">Title</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="message" class="font-bold">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="font-bold">Submit</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2021 EL TIGRE inc. </p>
+    </div>
+  </footer>
+  <script id="template-product" type="text/x-handlebars-template">
+    <div class="row product mb-5 {{#if (isOdd id)}}reverse{{/if}}">
+      <div class="col-12 col-md-6">
+        <div class="product__image">
+          <img src="{{ image }}" alt="{{ title }}" width="553" height="422">
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="product__content">
+          <h3 class="product__header font-bold">
+            <span class="product__number">0{{ id }}.</span>
+            <span class="product__name">{{ title }}</span>
+          </h3>
+          <div class="product__text-row">
+            <p class="product__line"></p>
+            <p class="product__description font-regular">{{ description }}</p>
+          </div>
+          <div class="product__meta font-bold">
+            <p class="product__meta__item"><strong>Roasting:</strong> <span class="product__meta__rating">{{ roasting }}/10</span></p>
+            <p class="product__meta__item"><strong>Intensity:</strong> <span class="product__meta__rating">{{ intensity }}/10</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script src="vendor/handlebars/handlebars.min-v4.7.8.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.about_us {
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/about-us.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 450px;
+
+  &__text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: $color-white;
+    padding: 0.5rem 22%;
+    font-size: $base-size * 1.4;
+
+    &__right {
+      text-align: right;
+    }
+  }
+}
